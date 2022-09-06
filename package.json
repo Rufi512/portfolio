@@ -2,11 +2,8 @@
   "name": "personal-portfolio",
   "private": true,
   "version": "1.0.0",
-  "homepage": "http://rufi512.github.io/portfolio",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
@@ -17,7 +14,6 @@
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
     "axios": "^0.27.2",
-    "gh-pages": "^4.0.0",
     "graphql": "^15.8.0",
     "graphql-tag": "^2.12.6",
     "sass": "^1.54.8",

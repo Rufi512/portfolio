@@ -36,7 +36,7 @@ const request = async () => {
 
         const authLink = setContext(async (_, { headers }) => {
             // authentication token 
-            const token = `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`;
+            const token = `${import.meta.env.VITE_TOKEN_GITHUB}`;
             // Return the headers to the context so httpLink can read them
             return {
                 headers: {
