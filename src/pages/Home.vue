@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, defineComponent } from "vue";
+import { ref, onMounted } from "vue";
 
 import bgImage from "../assets/images/bg.jpg";
 import testIcon from "../assets/icons/categories.png";
