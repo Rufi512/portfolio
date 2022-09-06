@@ -1,0 +1,12 @@
+@use '../abstracts/colors' as colors;
+
+@mixin subtitle(){
+	width:90%;
+    color:colors.$dark-orange;
+    font-family: 'prata';
+    text-align:center;
+    font-size:2rem;
+    border-bottom: 3px solid colors.$dark-orange;
+    line-height: 1.4;
+    max-width: 305px;
+}

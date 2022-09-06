@@ -1,0 +1,198 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/colors" as colors;
+@use "../components/titles.scss" as title;
+@use "../components/card.scss" as card;
+
+.home .header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        filter: sepia(7%) blur(1px) brightness(45%) saturate(92%) contrast(134%);
+        -webkit-filter: sepia(7%) blur(1px) brightness(45%) saturate(92%) contrast(134%);
+        -moz-filter: sepia(7%) blur(1px) brightness(45%) saturate(92%) contrast(134%);
+    }
+}
+
+.home .header .container-saludated {
+    @include mix.absolute();
+    top: 120px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: colors.$white;
+    transition: all 1s ease;
+}
+
+.home .header .container-saludated-show{
+    top: 0px;
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.home .header .container-saludated h2,
+.home .header .container-saludated h1,
+.home .header .container-saludated h4 {
+    margin: 15px 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.home .header .container-saludated h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+.home .header .container-saludated h1 {
+    font-size: 2.15rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.home .header .container-saludated h4 {
+    font-size: 1.5rem;
+}
+
+.home .about,
+.home .projects,
+.home .contact {
+    margin-top: 41px;
+    @include mix.centered(column, center, center);
+}
+
+.home .about h2,
+.home .projects h2,
+.home .contact h2 {
+    @include title.subtitle();
+}
+
+.home .about p {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.home .projects .indicator-loading{
+    @include mix.centered(column,center,center);
+    h4{
+        margin: 10px 0;
+    }
+}
+
+.home .projects .container-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    margin-top: 30px;
+    max-width: 1440px;
+}
+
+.home .projects .container-cards .card {
+    @include card.projects;
+}
+
+.home .contact {
+    .social-media {
+        @include mix.centered(column, center, flex-start);
+        margin: 30px 0;
+
+        .media {
+            @include mix.centered(row, center, flex-start);
+            margin-bottom: 5px;
+
+            img {
+                width: 32px;
+                margin-right: 8px;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: colors.$dark;
+        }
+
+        &:last-child {
+            p {
+                margin-top: 9px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .home .header {
+        height: 370px;
+        img{
+            width: 100%;
+        }
+    }
+
+    .home .header .container-saludated h1,
+    .home .header .container-saludated h3,
+    .home .header .container-saludated h4 {
+        margin: 24px 0px;
+    }
+
+    .home .header .container-saludated h1 {
+        font-size: 4.38rem;
+        font-weight: 700;
+    }
+
+    .home .header .container-saludated h3 {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    .home .header .container-saludated h4 {
+        font-size: 2rem;
+    }
+
+    .home .about h2,
+    .home .projects h2,
+    .home .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .home .about p {
+        padding: 0;
+        margin-top: 30px;
+        font-size: 1.25rem;
+        max-width: 810px;
+    }
+
+    .home .contact .container-contacts {
+        @include mix.centered(row, center, space-around);
+        flex-flow: wrap;
+        width: 90%;
+        max-width: 1240px;
+
+        .social-media {
+            align-items: flex-start;
+            margin: 20px 30px;
+
+            .media {
+                height: 50px;
+
+                img {
+                    width: 34px;
+                }
+            }
+        }
+
+        .media p,
+        a {
+            font-size: 1.3rem;
+        }
+    }
+}

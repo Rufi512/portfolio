@@ -1,0 +1,220 @@
+@use "../abstracts/colors" as colors;
+@use "../abstracts/mixins" as mix;
+@mixin projects {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 20px 20px 20px 15px;
+	padding:10px 0 20px 0px;
+	max-width: 442px;
+	box-shadow: 0px 5px 10px 0px #00000057;
+	color: colors.$white;
+	background: #364073;
+	border-radius: 5px;
+	.card-title,
+	.card-description {
+		margin: 0 20px;
+	}
+
+	.card-title {
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+
+	.card-description {
+		margin-top: 5px;
+		height: 74px;
+		font-size: 0.98rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.image-header {
+		margin: 15px auto;
+		width: 100%;
+		max-width: 90%;
+		height: 205px;
+		border-radius: 10px;
+		object-fit: cover;
+	}
+
+	.categories-container {
+		position:relative;
+		margin-top: 10px;
+
+		.title-icon {
+			@include mix.centered(row, center, flex-start);
+			margin-left: 15px;
+
+			h4 {
+				font-size: 1.4rem;
+				font-weight: 500;
+			}
+		}
+
+		.title-icon img {
+			width: 32px;
+		}
+
+		.container-tags {
+			@include mix.absolute;
+			@include mix.centered(row, center, flex-start);
+			height:51px;
+			overflow:auto;
+			overflow-y: hidden;
+			top:20px;
+			padding-left: 20px;
+			margin-top:10px;
+			.tag {
+				span:first-child{
+					width: 15px;
+					height: 15px;
+					margin-right: 5px;
+					border-radius: 100%;
+				}
+				width: max-content;
+    			display: flex;
+				align-items: center;
+    			flex: none;
+				margin-right:13px;
+				background: #17183e;
+				color:colors.$white;
+				width:max-content;
+				padding:5px 13px;
+				border-radius:3px;
+				font-weight:500;
+			}
+		}
+	}
+
+	.container-buttons{
+		@include mix.centered(column, center, center);
+		margin:53px 20px 10px 20px;
+		a{
+			position: relative;
+			@include mix.centered(row, center, flex-start);
+			margin:5px 0px;
+			width:100%;
+			max-width:392px;
+			text-decoration: none;
+			color:colors.$white;
+			font-weight:500;
+			font-size:1.2rem;
+			border-radius:5px;
+			&:before,&:after{
+				content:"";
+				@include mix.absolute();
+				border-radius: 4px;
+				transition: all 0.3s ease;
+				opacity: 1;
+				z-index: 0;
+			}
+
+			&:after{
+				opacity: 0;
+			}
+
+			&:hover:after{
+				opacity: 1;
+			}
+
+			&:hover:before{
+				opacity: 0;
+			}
+
+			div{
+				z-index: 1;
+			}
+		}
+		
+		.github:before{
+			background:colors.$green;
+		}
+
+		.itch:before{
+			background:colors.$red;
+		}
+
+		.live:before{
+			background:colors.$blue;
+		}
+
+		.live:after{
+			background:linear-gradient(-90deg, #063781, #074185 100%);
+		}
+
+		.github:after{
+			background:linear-gradient(-90deg, #166e29, #247637 100%);
+		}
+		
+
+		a div{
+			margin: auto;
+			width: auto;
+			@include mix.centered(row, center, flex-start);
+			height: 35px;
+
+			img{
+				width:28px;
+				margin-right: 13px;
+			}
+
+			p{
+				width: 116px;
+    			margin-top: 2px;
+			}
+		}
+	}
+
+	@media(min-width:768px){
+		width: 30%;
+		min-width: 370px;
+		.image-header{
+			width:100%;
+			object-position: left;
+		}
+		
+		.card-title{
+			font-size:1.4rem;
+		}
+
+		.card-description{
+			font-size:1.2rem;
+		}
+
+		.categories-container{
+			margin-top:15px;
+			.title-icon{
+				h4{
+				font-size:1.5rem;
+			}
+		}
+		}
+
+		.container-buttons{
+			    margin: 55px 20px 10px 20px;
+				flex-direction:row;
+				justify-content: space-between;
+				a{
+					width: 47%;
+					min-width: 155px;
+					max-width:190px;
+					div{
+						p{width: auto;}
+						img{
+							margin-right: 8px;
+						}
+					}
+					transition: all 0.3s ease;
+				}
+
+				
+		}
+
+		&:hover{
+			transform: translateY(-10px);
+			box-shadow: 0px 10px 15px 0px #00000057;
+		}
+		transition: all 0.3s ease;
+	}
+}
