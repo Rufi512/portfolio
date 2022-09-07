@@ -3,6 +3,10 @@
 @use "../components/titles.scss" as title;
 @use "../components/card.scss" as card;
 
+.home{
+    background-color: colors.$vintage;
+}
+
 .home .header {
     position: relative;
     height: 300px;
