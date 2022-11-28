@@ -14,9 +14,9 @@
 
     img {
         object-fit: cover;
-        filter: sepia(7%) blur(1px) brightness(45%) saturate(92%) contrast(134%);
-        -webkit-filter: sepia(7%) blur(1px) brightness(45%) saturate(92%) contrast(134%);
-        -moz-filter: sepia(7%) blur(1px) brightness(45%) saturate(92%) contrast(134%);
+        filter: sepia(7%) brightness(45%) saturate(92%) contrast(134%);
+        -webkit-filter: sepia(7%) brightness(45%) saturate(92%) contrast(134%);
+        -moz-filter: sepia(7%) brightness(45%) saturate(92%) contrast(134%);
     }
 }
 

@@ -4,7 +4,7 @@ import { ref, onMounted } from "vue";
 import bgImage from "../assets/images/bg.jpg";
 import testIcon from "../assets/icons/categories.png";
 import github from "../assets/icons/github.png";
-import itch from "../assets/icons/itchio.png";
+//import itch from "../assets/icons/itchio.png";
 import rocket from "../assets/icons/rocket.png";
 import twitter from "../assets/icons/twitter.png"
 
@@ -152,14 +152,14 @@ onMounted(async () => {
             <div :class="['container-saludated', loadPage ? 'container-saludated-show' : '']">
                 <h3>Hi there! i'm</h3>
                 <h1>Rafael Amaya</h1>
-                <h4>Web developer</h4>
+                <h4>💻 Web developer 🔥</h4>
             </div>
         </div>
         <section class="about">
             <h2>About me</h2>
             <p>
                 Web developer dedicated to client-side and server-side programming, my favorite language is JavaScript,
-                but I also like to explore new technologies on a daily basis
+                but I also like to explore new technologies on a daily basis 😋
             </p>
         </section>
         <section class="projects">

@@ -1,6 +1,6 @@
 # Portfolio
-Personal portfolio for personal projects
 
+Personal portfolio for personal projects
 
 ## Vue 3 + TypeScript + Vite
 
@@ -9,6 +9,14 @@ This template should help get you started developing with Vue 3 and TypeScript i
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+
+## How to run
+
+1. In the root from project install all dependecies
+`npm i`
+
+2. Run
+`npm run dev`
 
 ## Type Support For `.vue` Imports in TS
 
